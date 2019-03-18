@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QmyWidget</class>
+ <widget class="QWidget" name="QmyWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>541</width>
+    <height>410</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QmyWidget</string>
+  </property>
+  <widget class="QLabel" name="labBoy">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>32</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置男生年龄</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labGirl">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>71</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置女生年龄</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBoy">
+   <property name="geometry">
+    <rect>
+     <x>108</x>
+     <y>34</y>
+     <width>48</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinGirl">
+   <property name="geometry">
+    <rect>
+     <x>108</x>
+     <y>73</y>
+     <width>48</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnBoyInc">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>30</y>
+     <width>93</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>boy长大一岁</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnGirlInc">
+   <property name="geometry">
+    <rect>
+     <x>162</x>
+     <y>71</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>girl长大一岁</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnClear">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>70</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>清空文本框</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnClassInfo">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>30</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>类的元对象信息</string>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>180</y>
+     <width>291</width>
+     <height>121</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

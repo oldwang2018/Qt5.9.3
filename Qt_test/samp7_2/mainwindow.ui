@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>486</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>741</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_2"/>
+   <addaction name="action_3"/>
+   <addaction name="action_4"/>
+   <addaction name="actQuit"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>true</bool>
+   </attribute>
+   <addaction name="actTabReset"/>
+   <addaction name="separator"/>
+   <addaction name="action_stm"/>
+   <addaction name="action_stm_2"/>
+   <addaction name="separator"/>
+   <addaction name="action_dat"/>
+   <addaction name="action_dat_2"/>
+   <addaction name="separator"/>
+  </widget>
+  <action name="actTabReset">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/100.bmp</normaloff>:/images/icons/100.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>表格复位</string>
+   </property>
+  </action>
+  <action name="action_stm">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/open.bmp</normaloff>:/images/icons/open.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>打开stm文件</string>
+   </property>
+  </action>
+  <action name="action_stm_2">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/save.bmp</normaloff>:/images/icons/save.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>保存stm文件</string>
+   </property>
+  </action>
+  <action name="action_dat">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/126.bmp</normaloff>:/images/icons/126.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>打开dat文件</string>
+   </property>
+  </action>
+  <action name="action_dat_2">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/066.GIF</normaloff>:/images/icons/066.GIF</iconset>
+   </property>
+   <property name="text">
+    <string>保存dat文件</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/append.bmp</normaloff>:/images/icons/append.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>添加行</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/306.bmp</normaloff>:/images/icons/306.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>插入行</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/delete.bmp</normaloff>:/images/icons/delete.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>删除行</string>
+   </property>
+  </action>
+  <action name="actQuit">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/images/icons/exit.bmp</normaloff>:/images/icons/exit.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actQuit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>321</x>
+     <y>242</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

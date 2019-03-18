@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Icon">
+        <file>Icon/configure.png</file>
+        <file>Icon/Power.png</file>
+        <file>Icon/sensor.png</file>
+    </qresource>
+</RCC>
