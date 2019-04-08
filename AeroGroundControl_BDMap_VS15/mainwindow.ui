@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>710</width>
+    <height>501</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Aero-GroundControl</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="0" rowspan="3">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>   控制面板</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="0" colspan="2">
+        <widget class="QPlainTextEdit" name="plainTextEdit"/>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,5">
+         <item>
+          <widget class="QSpinBox" name="spinUAVNumber">
+           <property name="maximum">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="editCommand"/>
+         </item>
+        </layout>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="btnUAVStatus">
+         <property name="text">
+          <string>状态</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="btnCommand">
+         <property name="text">
+          <string>命令</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="btnUAVTakeoff">
+         <property name="text">
+          <string>起飞</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="btnUAVLand">
+         <property name="text">
+          <string>降落</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QPushButton" name="btnUAVTakeoff_All">
+         <property name="text">
+          <string>一键起飞</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="btnUAVLand_All">
+         <property name="text">
+          <string>一键降落</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnGenerate">
+         <property name="text">
+          <string>IP配置</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btnUAVStatus_All">
+         <property name="text">
+          <string>全部状态</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="btnGoto">
+         <property name="text">
+          <string>定点模式</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
+        <widget class="QPushButton" name="btnSaveStatus">
+         <property name="text">
+          <string>保存状态信息</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="timeLabel">
+      <property name="text">
+       <string>time</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QScrollBar" name="timeBar">
+      <property name="maximum">
+       <number>300</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>710</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actSelectMap"/>
+   <addaction name="separator"/>
+   <addaction name="separator"/>
+   <addaction name="actStartMonitor"/>
+   <addaction name="separator"/>
+   <addaction name="actStopMonitor"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actStartMonitor">
+   <property name="text">
+    <string>开始监视</string>
+   </property>
+  </action>
+  <action name="actStopMonitor">
+   <property name="text">
+    <string>停止监视</string>
+   </property>
+  </action>
+  <action name="actSelectMap">
+   <property name="text">
+    <string>加载地图</string>
+   </property>
+  </action>
+  <action name="action3D">
+   <property name="text">
+    <string>3D / 地图切换</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>在线 / 离线切换</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

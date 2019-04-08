@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=CSHY7cqPUt89ltPGNc7LK7wjG4qutlfB"></script>
+	<title>地图展示</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<!-- <script src="baiduTilesInfo.js"></script>  -->
+<script src="qwebchannel.js"></script>
+<script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap", {enableMapClick:false});// 创建Map实例，关闭底图可点功能
+	map.centerAndZoom(new BMap.Point(118.801528, 31.942753), 19);  // 初始化地图,设置中心点坐标和地图级别
+	//****添加缩放按钮
+	var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	map.addControl(top_left_control);        
+	map.addControl(top_left_navigation);     
+	//添加地图类型控件
+	map.addControl(new BMap.MapTypeControl({
+		mapTypes:[
+            BMAP_NORMAL_MAP,
+            BMAP_HYBRID_MAP
+        ]}));	  
+	map.setCurrentCity("南京");          // 设置地图显示的城市 此项是必须设置的
+	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+
+
+	function addmarker_BD(x,y){ //x=long , y=lat
+		map.clearOverlays();
+		var pt = new BMap.Point(x, y);
+		var myIcon = new BMap.Icon("airplane48.ico", new BMap.Size(250,250));
+		var marker = new BMap.Marker(pt,{icon:myIcon});  // 创建标注
+		map.addOverlay(marker);              // 将标注添加到地图中
+		//map.removeOverlay(marker);
+	}
+
+	var markers= new Array(8);
+	function addmarker(x,y,z,n,f,d){ // long, lat ,alt , No. ,flag, describe
+		map.removeOverlay(markers[n]); //map.clearOverlays();
+		if(f==1){
+		translateCallback = function (data){
+			if(data.status === 0) {
+				// var marker = new BMap.Marker(data.points[0]);
+				var myIcon = new BMap.Icon("airplane48.ico", new BMap.Size(250,250));
+				markers[n] = new BMap.Marker(data.points[0],{icon:myIcon});  // 创建标注				
+				map.addOverlay(markers[n]);  
+			} // map.setCenter(data.points[0]);
+   		}
+		setTimeout(function(){  //GPS转百度坐标
+			var convertor = new BMap.Convertor();
+			var pointArr = [];
+			pointArr.push(new BMap.Point(x,y));
+			convertor.translate(pointArr, 1, 5, translateCallback)
+		}, 100);  }
+	}
+	//end********************************************* //交互
+	new QWebChannel(qt.webChannelTransport, function(channel) {
+        window.bridge = channel.objects.bridge;
+        window.bridge.sigYourName.connect(function(name) {
+          alert(name);
+        });
+      });
+	function showAlert() {
+        alert('this is web alert');
+      }
+	map.addEventListener("click", function (e) {
+        bridge.getCoordinate(e.point.lng, e.point.lat);
+	});
+	
+	map.addEventListener("click",function(e){ //鼠标左键点击返回坐标     
+		alert(e.point.lng + "," + e.point.lat);
+	});
+	//  end *********************************************** end
+	
+	//添加 三角箭头
+	var point = new BMap.Point(118.801528, 31.942753);
+	var vectorFCArrow = new BMap.Marker(new BMap.Point(point.lng,point.lat), {
+	// 初始化方向向上的闭合箭头
+	icon: new BMap.Symbol(BMap_Symbol_SHAPE_FORWARD_CLOSED_ARROW, {
+		scale: 5,
+		strokeWeight: 1,
+		rotation: 0,//顺时针旋转30度
+		fillColor: 'red',
+		fillOpacity: 0.8
+	})
+	});
+	map.addOverlay(vectorFCArrow);
+	vectorFCArrow.show()	
+
+ //添加示例标注  图片+ 标点
+	translateCallback = function (data){
+			if(data.status === 0) {
+				var mark= new BMap.Marker(data.points[0]);  // 创建标注				
+				map.addOverlay(mark);  
+
+				var myIcon = new BMap.Icon("airplane48.ico", new BMap.Size(-0.000001,-0.000001));
+				var mark2= new BMap.Marker(data.points[0],{icon:myIcon});  // 创建标注	
+				map.addOverlay(mark2);
+				map.setCenter(data.points[0]);
+			} // 
+   		}
+		setTimeout(function(){  //GPS转百度坐标
+			var convertor = new BMap.Convertor();
+			var pointArr = [];
+			pointArr.push(new BMap.Point(118.7901147,31.9391303));
+			convertor.translate(pointArr, 1, 5, translateCallback)
+		}, 100);   //end 
+</script>
+
+
+
+
+
+<!--
+	//坐标转换  
+	//地图漂移问题 
+
+-->
