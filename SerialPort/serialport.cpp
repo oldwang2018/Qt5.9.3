@@ -193,7 +193,7 @@ void SerialPort::slot_read_from_port()
     }
     if(ui->radio_accept_ascii->isChecked())
     {
-        ui->plainTextEdit_rev->insertPlainText(QString::fromLocal8Bit(byteArray));
+        ui->plainTextEdit_rev->insertPlainText(QString::fromUtf8(byteArray));//fromLocal8Bit
     }
     else if( ui->radio_accept_hex->isChecked())
     {
@@ -221,7 +221,7 @@ void SerialPort::on_btnSendData_clicked()
     {   //Unicode转GBK 参考博客问答http://bbs.csdn.net/topics/390024555
 //        QTextCodec *codec = QTextCodec::codecForName("GBK"); //建立一个unicode与GBK之间的转换器
 //        QByteArray bytes = codec->fromUnicode(sendstr); //unicode转换成gbk
-        QByteArray bytes=sendstr.toLocal8Bit();//toLatin1
+        QByteArray bytes=sendstr.toUtf8();//toLatin1  toLocal8Bit
         serial->write(bytes);
         txCount+=bytes.length();show_portStateLabel();
     }
