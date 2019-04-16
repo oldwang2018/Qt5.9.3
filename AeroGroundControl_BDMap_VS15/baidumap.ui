@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>718</width>
-    <height>467</height>
+    <height>575</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,39 +18,35 @@
     <rect>
      <x>30</x>
      <y>60</y>
-     <width>141</width>
-     <height>301</height>
+     <width>191</width>
+     <height>381</height>
     </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>200</width>
+     <height>16777215</height>
+    </size>
    </property>
    <property name="title">
     <string>GroupBox</string>
    </property>
-   <widget class="QPushButton" name="btnAddMarker">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>240</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>addmarker</string>
-    </property>
-   </widget>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>30</y>
-      <width>121</width>
-      <height>131</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string>addmarker(118.7901445 , 31.9391304 , 9 , 0, 1 , 0)</string>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QPlainTextEdit" name="plainTextEdit">
+      <property name="plainText">
+       <string>addmarker(118.7901445 , 31.9391304 , 9 , 0, 1 , 0)</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="btnAddMarker">
+      <property name="text">
+       <string>addmarker</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
  <resources/>

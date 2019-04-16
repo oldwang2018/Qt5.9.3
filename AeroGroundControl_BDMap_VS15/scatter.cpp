@@ -23,6 +23,20 @@ Scatter::Scatter(QWidget *parent) :
     layout->setSpacing(2);
     this->setLayout(layout);
     on_btnInit_clicked();
+    {
+        graph3D->axisX()->setRange(-50,50);
+        graph3D->axisY()->setRange(0,50);
+        graph3D->axisZ()->setRange(-50,50);
+        QVector<QVector3D> tmp;
+        tmp.append(QVector3D(0,20,25));
+        tmp.append(QVector3D(-10,20,5));
+        tmp.append(QVector3D(10,20,5));
+        tmp.append(QVector3D(-30,20,-10));
+        tmp.append(QVector3D(-10,20,-10));
+        tmp.append(QVector3D(10,20,-10));
+        tmp.append(QVector3D(30,20,-10));
+        show(tmp);
+    }
 }
 void Scatter::iniGraph3D()
 {

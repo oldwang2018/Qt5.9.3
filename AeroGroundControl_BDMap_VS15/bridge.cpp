@@ -13,7 +13,7 @@ void bridge::getYourName()
 
 void bridge::getCoordinate(QString lon, QString lat)
 {
-    qDebug()<<lon<<lat;
+    //qDebug()<<lon<<lat;
     double j=lon.toDouble();
     double w=lat.toDouble();
     emit sendDate(j,w);

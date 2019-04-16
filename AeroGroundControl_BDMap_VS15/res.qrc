@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/ico">
+        <file>resource/3d.ico</file>
+        <file>resource/map.ico</file>
+        <file>resource/start.ico</file>
+        <file>resource/stop.ico</file>
+        <file>resource/switch.ico</file>
+        <file>resource/background.jpg</file>
+    </qresource>
+</RCC>

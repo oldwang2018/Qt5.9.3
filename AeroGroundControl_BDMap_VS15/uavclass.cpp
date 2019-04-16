@@ -12,6 +12,12 @@ UAVClass::UAVClass(QString address,int n)
     this->ID=n;
     NetworkManager = new QNetworkAccessManager();
     connect(NetworkManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(slot_replayFinished(QNetworkReply*)));
+
+    QByteArray byteArray2="{\"long\":0,\"lat\":0,\"alt\":0}";
+    QJsonParseError jsonError;
+    QJsonDocument doucment = QJsonDocument::fromJson(byteArray2, &jsonError);  // 转化为 JSON 文档
+    QJsonObject object=doucment.object();
+    status_map[QTime::currentTime()]=object;
 }
 
 void UAVClass::slot_replayFinished(QNetworkReply *reply )

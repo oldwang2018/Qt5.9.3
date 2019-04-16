@@ -1,6 +1,6 @@
 #include "baidumap.h"
 #include "ui_baidumap.h"
-#include    <QSplitter>
+#include <QSplitter>
 #include<QDir>
 #include<QDebug>
 #include<QHBoxLayout>
@@ -10,7 +10,6 @@ BaiduMap::BaiduMap(QWidget *parent) :
     ui(new Ui::BaiduMap)
 {
     ui->setupUi(this);
-
     m_view=new QWebEngineView(this);
     channel = new QWebChannel(this);
     bridge *JSbridge =new bridge();
@@ -22,16 +21,19 @@ connect((QObject*)JSbridge,SIGNAL(sendDate(double,double)),this,SLOT(revCoordina
     absDir="C:/Users/WangYu/Desktop/AeroGroundControl/map/baidumap.html";
     //absDir="./map/baidumap.html";
     QString filePath = "file:///" + absDir;
+    //filePath="http://www.baidu.com";
     m_view->page()->load(QUrl(filePath));//load the map in relevant path
 
     QSplitter   *splitter=new QSplitter(Qt::Horizontal);
-    splitter->addWidget(ui->groupBox);
     splitter->addWidget(m_view);
+    splitter->addWidget(ui->groupBox);
     QHBoxLayout *layout=new QHBoxLayout();
     layout->addWidget(splitter);
     layout->setContentsMargins(2,2,2,2);
     layout->setSpacing(2);
     this->setLayout(layout);
+
+    ui->groupBox->resize(QSize(200,205));
 }
 
 BaiduMap::~BaiduMap()

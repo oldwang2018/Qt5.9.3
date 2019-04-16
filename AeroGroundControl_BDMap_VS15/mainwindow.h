@@ -6,6 +6,7 @@
 #include "scatter.h"
 #include"uavclass.h"
 #include<QTimer>
+#include<QSplitter>
 #include"baidumap.h"
 const int UAV_MaxNum=8;
 
@@ -21,7 +22,7 @@ private:
     UAVClass *UAV[UAV_MaxNum];
     QVector<QVector3D> Vector_pos;
     QTimer *Timer;
-    //Scatter *scatter;
+    Scatter *scatter;
     BaiduMap *map;
 
 private slots:
@@ -53,6 +54,10 @@ private slots:
 
 
     void on_actSelectMap_triggered();
+
+    void on_action_Map_3D_triggered();
+
+    void on_act_show3DPostion_triggered();
 
 protected:
     void closeEvent(QCloseEvent *event);

@@ -49,3 +49,6 @@ QT       += webengine webenginewidgets
 QT+=network
 
 RC_ICONS=agc.ico
+
+RESOURCES += \
+    res.qrc
